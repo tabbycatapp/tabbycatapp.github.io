@@ -1,68 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tabby Cat App</title>
+    <title>Placements</title>
     <style>
-        #room-container {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Adjust as needed */
-            background-color: #f0f0f0; /* Sample background color */
-        }
-
         .room-item {
             position: absolute;
-            /* Additional styles for items can go here */
+            /* Common styles for items can go here */
         }
 
         #door {
-            top: 50%;
-            left: 10%;
+            top: 50%; 
+            left: 10%; 
             transform: translateY(-50%);
         }
 
         #clock {
-            top: 5%;
+            top: 5%; 
             right: 20%;
         }
 
         #window {
-            top: 30%;
-            left: 50%;
+            top: 30%; 
+            left: 50%; 
             transform: translateX(-50%);
         }
 
         #table {
-            bottom: 10%;
+            bottom: 10%; 
             left: 40%;
         }
 
         #cat-bed {
-            bottom: 5%;
+            bottom: 5%; 
             right: 30%;
         }
 
         #shelves {
-            top: 20%;
+            top: 20%; 
             right: 10%;
         }
-    </style>
-    <script>
-        function loadPlacements() {
-            fetch('placements.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('room-container').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading placements:', error));
-        }
 
-        window.onload = loadPlacements;
-    </script>
+        /* Add more items with unique positions here */
+    </style>
 </head>
 <body>
     <div id="room-container">
-        <!-- Content from placements.html will be loaded here -->
+        <img class="room-item" id="door" src="door.png" alt="Door">
+        <img class="room-item" id="clock" src="path/to/clock.jpg" alt="Clock">
+        <img class="room-item" id="window" src="path/to/window.jpg" alt="Window">
+        <img class="room-item" id="table" src="path/to/table.jpg" alt="Table">
+        <img class="room-item" id="cat-bed" src="path/to/cat-bed.jpg" alt="Cat Bed">
+        <img class="room-item" id="shelves" src="path/to/shelves.jpg" alt="Shelves">
+        <!-- Add more items as needed -->
     </div>
 </body>
 </html>
