@@ -4,61 +4,65 @@
     <title>Tabby Cat App</title>
     <style>
         #room-container {
-            position: relative; /* Container for the items */
-            width: 100%; /* Adjust as needed */
-            height: 100%; /* Adjust as needed */
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Adjust as needed */
+            background-color: #f0f0f0; /* Sample background color */
         }
 
         .room-item {
             position: absolute;
-            /* Common styles for items can go here */
+            /* Additional styles for items can go here */
         }
 
         #door {
-            top: 50px; /* Adjust as needed */
-            left: 20px; /* Adjust as needed */
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
         }
 
         #clock {
-            top: 10px; /* Adjust as needed */
-            right: 30px; /* Adjust as needed */
+            top: 5%;
+            right: 20%;
         }
 
         #window {
-            top: 40px; /* Adjust as needed */
-            left: 200px; /* Adjust as needed */
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         #table {
-            bottom: 20px; /* Adjust as needed */
-            left: 100px; /* Adjust as needed */
+            bottom: 10%;
+            left: 40%;
         }
 
         #cat-bed {
-            bottom: 15px; /* Adjust as needed */
-            right: 50px; /* Adjust as needed */
+            bottom: 5%;
+            right: 30%;
         }
 
         #shelves {
-            top: 60px; /* Adjust as needed */
-            right: 70px; /* Adjust as needed */
+            top: 20%;
+            right: 10%;
+        }
+    </style>
+    <script>
+        function loadPlacements() {
+            fetch('placements.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('room-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading placements:', error));
         }
 
-        /* Add more items with unique positions here */
-    </style>
+        window.onload = loadPlacements;
+    </script>
 </head>
 <body>
     <div id="room-container">
-        <img class="room-item" id="door" src="path/to/door.jpg" alt="Door">
-        <img class="room-item" id="clock" src="path/to/clock.jpg" alt="Clock">
-        <img class="room-item" id="window" src="path/to/window.jpg" alt="Window">
-        <img class="room-item" id="table" src="path/to/table.jpg" alt="Table">
-        <img class="room-item" id="cat-bed" src="path/to/cat-bed.jpg" alt="Cat Bed">
-        <img class="room-item" id="shelves" src="path/to/shelves.jpg" alt="Shelves">
-        <!-- Add more items as needed -->
+        <!-- Content from placements.html will be loaded here -->
     </div>
-
-    <!-- Rest of your page content -->
-
 </body>
 </html>
