@@ -1,84 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
+    <title>Tabby Cat App</title>
+    <script>
+        // Function to load placements.html
+        function loadPlacements() {
+            fetch('placements.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('placement-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading placements:', error));
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        .website-card {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-
-        .website-card img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .website-card h3 {
-            margin-top: 0;
-        }
-
-        /* Add more styles as needed */
-    </style>
+        // Load placements when the window is loaded
+        window.onload = loadPlacements;
+    </script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#apps">Apps</a></li>
-                <li><a href="#blog">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h1>Welcome to My Website</h1>
-            <!-- Add home content here -->
-        </section>
+    <div id="placement-container">
+        <!-- Content from placements.html will be loaded here -->
+    </div>
 
-        <section id="apps">
-            <h2>Our Websites</h2>
-            <div class="website-card">
-                <img src="link-to-image1.jpg" alt="Website 1 Screenshot">
-                <h3>Website 1</h3>
-                <p>Description of Website 1.</p>
-                <a href="http://website1.com">Visit Website 1</a>
-            </div>
-            <div class="website-card">
-                <img src="link-to-image2.jpg" alt="Website 2 Screenshot">
-                <h3>Website 2</h3>
-                <p>Description of Website 2.</p>
-                <a href="http://website2.com">Visit Website 2</a>
-            </div>
-            <!-- Add more website cards as needed -->
-        </section>
+    <!-- Other content and scripts for index.html -->
 
-        <section id="blog">
-            <h2>Blog</h2>
-            <!-- Blog content will go here -->
-        </section>
-    </main>
-    <footer>
-        <p>© 2023 My Website</p>
-    </footer>
-
-    <script>
-        // Add JavaScript code here if needed
-    </script>
 </body>
 </html>
