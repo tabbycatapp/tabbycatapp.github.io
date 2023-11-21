@@ -1,28 +1,13 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Tabby Cat App</title>
-    <script>
-        // Function to load placements.html
-        function loadPlacements() {
-            fetch('placements.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('placement-container').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading placements:', error));
-        }
-
-        // Load placements when the window is loaded
-        window.onload = loadPlacements;
-    </script>
-</head>
-<body>
-    <div id="placement-container">
-        <!-- Content from placements.html will be loaded here -->
-    </div>
-
-    <!-- Other content and scripts for index.html -->
-
-</body>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <main>
+    </main>
+    <script src="sketch.js"></script>
+  </body>
 </html>
